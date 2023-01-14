@@ -1,37 +1,28 @@
+import { range } from "d3";
 import "./App.css";
+import Face from "./Face/index";
 
-const width = 960;
-const height = 500;
-const strokeWidth = 10;
-const centerX = width / 2;
-const centerY = height / 2;
-const eyeOffsetX = 90;
-const eyeOffsetY = 100;
-const eyeRadius = 40;
+const width = 150;
+const height = 150;
+
+const faces = range(12);
 
 function App() {
-  return (
-    <svg width={width} height={height}>
-      <circle
-        r={centerY - strokeWidth / 2}
-        cx={centerX}
-        cy={centerY}
-        fill="yellow"
-        stroke="black"
-        stroke-width={strokeWidth}
-      ></circle>
-      <circle
-        r={eyeRadius}
-        cx={centerX - eyeOffsetX}
-        cy={centerY - eyeOffsetY}
-      ></circle>
-      <circle
-        r={eyeRadius}
-        cx={centerX + eyeOffsetX}
-        cy={centerY - eyeOffsetY}
-      ></circle>
-    </svg>
-  );
+  return faces.map(() => (
+    <Face
+      key={Math.random()}
+      width={width}
+      height={height}
+      strokeWidth={10}
+      centerX={width / 2}
+      centerY={height / 2}
+      eyeOffsetX={30}
+      eyeOffsetY={30}
+      eyeRadius={10}
+      mouthWidth={10}
+      mouthRadius={40}
+    />
+  ));
 }
 
 export default App;
