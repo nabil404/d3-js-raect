@@ -1,10 +1,10 @@
-function Marks({ data, xScale, yScale }) {
+function Marks({ data, xScale, yScale, xValue, yValue }) {
   return data.map((d) => (
     <rect
       key={Math.random()}
       x={0}
-      y={yScale(d.Country)}
-      width={xScale(d.Population)}
+      y={yScale(yValue(d))}
+      width={xScale(xValue(d))}
       height={yScale.bandwidth()}
     />
   ));
