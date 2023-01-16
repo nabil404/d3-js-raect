@@ -3,9 +3,9 @@ import { useData } from "./useData";
 
 import BarChart from "./BarChart";
 
-const width = 960;
+const width = 1080;
 const height = 500;
-const margin = { top: 20, right: 20, bottom: 20, left: 200 };
+const margin = { top: 40, right: 40, bottom: 60, left: 300 };
 
 function App() {
   const data = useData();
